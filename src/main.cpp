@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "game.hpp"
+#include "mainmenu.hpp"
 #include <string>
 using namespace std;
 
@@ -31,9 +32,40 @@ int main() {
     SetTargetFPS(60);
     InitAudioDevice();
 
+    MainMenu mainmenu;
     Game game;
 
+    Music menuMusic = LoadMusicStream("Sounds/menu.mp3");
+
+    bool startGame = false;
+
+    // Display the main menu
+    while (!WindowShouldClose() && !startGame) {
+        BeginDrawing();
+        ClearBackground(black);
+
+        UpdateMusicStream(menuMusic);
+        PlayMusicStream(menuMusic);
+
+        mainmenu.Draw();
+        mainmenu.DrawText();
+
+        if (mainmenu.ShouldStartGame()) {
+            startGame = true;
+        }
+
+        EndDrawing();
+    }
+
+     // Stop the menu music once the game starts
+    StopMusicStream(menuMusic);
+    UnloadMusicStream(menuMusic);
+
     while(WindowShouldClose() == false){
+
+        BeginDrawing();
+        ClearBackground(black);
+
         UpdateMusicStream(game.music);
         if (game.IsMusicPlaying) {
             PlayMusicStream(game.music);
@@ -44,9 +76,6 @@ int main() {
         game.HandleInput();
         game.Update();
 
-        BeginDrawing();
-
-        ClearBackground(black);
         DrawRectangleRoundedLines({10, 10, 980, 980}, 0.18f, 20, 2, orange);
         DrawLineEx({25, 920}, {975, 920}, 3, orange);
 
@@ -73,6 +102,7 @@ int main() {
         game.Draw();
         EndDrawing();
     }
+
     CloseAudioDevice();
     CloseWindow();
 }
