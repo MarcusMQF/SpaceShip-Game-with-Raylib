@@ -52,6 +52,6 @@ void MainMenu::CheckStartButtonClick(Vector2 mousePos){
 void MainMenu::DrawText(){
     const char* text = "SPACESHIP INVADERS";
     int textWidth = MeasureTextEx(font, text, 64, 2).x;
-    Vector2 textPos = { GetScreenWidth() / 2.0f - textWidth / 2.0f, startButtonRect.y - 200 };
+    Vector2 textPos = { GetScreenWidth() / 2.0f - textWidth / 2.0f, startButtonRect.y - 400 };
     DrawTextEx(font, text, textPos, 64, 2, WHITE);
 }
