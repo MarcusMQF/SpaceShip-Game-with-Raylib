@@ -1,9 +1,8 @@
-# Create a Game with Raylib C++ 
+# Create a Game with Raylib C++
 
 This Game is created by using Raylib (work on window 10 and 11)
 
 Raylib can be [download from here](https://www.raylib.com/)
-
 
 # Demo
 

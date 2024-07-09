@@ -4,17 +4,19 @@
 #include <string>
 using namespace std;
 
-
-string FormatWithLeadingZeros(int number, int width) {
+string FormatWithLeadingZeros(int number, int width)
+{
     string numberText = to_string(number);
     int leadingZeros = width - numberText.length();
-    if (leadingZeros <= 0) {
-        return numberText;  // No leading zeros needed
+    if (leadingZeros <= 0)
+    {
+        return numberText; // No leading zeros needed
     }
     return numberText = string(leadingZeros, '0') + numberText;
 }
 
-int main() {
+int main()
+{
 
     // Color grey = {29, 29, 27, 255};
     Color black = {0, 0, 0, 255};
@@ -40,7 +42,8 @@ int main() {
     bool startGame = false;
 
     // Display the main menu
-    while (!WindowShouldClose() && !startGame) {
+    while (!WindowShouldClose() && !startGame)
+    {
         BeginDrawing();
         ClearBackground(black);
 
@@ -50,26 +53,31 @@ int main() {
         mainmenu.Draw();
         mainmenu.DrawText();
 
-        if (mainmenu.ShouldStartGame()) {
+        if (mainmenu.ShouldStartGame())
+        {
             startGame = true;
         }
 
         EndDrawing();
     }
 
-     // Stop the menu music once the game starts
+    // Stop the menu music once the game starts
     StopMusicStream(menuMusic);
     UnloadMusicStream(menuMusic);
 
-    while(WindowShouldClose() == false){
+    while (WindowShouldClose() == false)
+    {
 
         BeginDrawing();
         ClearBackground(black);
 
         UpdateMusicStream(game.music);
-        if (game.IsMusicPlaying) {
+        if (game.IsMusicPlaying)
+        {
             PlayMusicStream(game.music);
-        } else {
+        }
+        else
+        {
             StopMusicStream(game.music);
         }
 
@@ -79,14 +87,18 @@ int main() {
         DrawRectangleRoundedLines({10, 10, 980, 980}, 0.18f, 20, 2, orange);
         DrawLineEx({25, 920}, {975, 920}, 3, orange);
 
-        if(game.run){
+        if (game.run)
+        {
             DrawTextEx(font, "LEVEL 01", {770, 935}, 34, 2, orange);
-        } else {
+        }
+        else
+        {
             DrawTextEx(font, "GAME OVER", {770, 935}, 34, 2, orange);
         }
 
         float x = 50.0;
-        for(int i = 0; i < game.lives; i++){
+        for (int i = 0; i < game.lives; i++)
+        {
             DrawTextureV(LivesImage, {x, 925}, WHITE);
             x += 50;
         }
