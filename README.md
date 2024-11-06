@@ -16,22 +16,6 @@ Use space key to Laser the alien and Press Enter to Restart
 - Retro-style graphics and sound effects
 - Smooth controls and animations
 
-## Requirements
-
-- C++ compiler
-- Raylib library
-- CMake (for building)
-- Windows 10/11
-
-## Installation
-
-1. Clone the repository:
-```git clone https://github.com/MarcusMQF/SpaceShip-Game-with-Raylib.git```
-
-2. Install Raylib library:
-   - Download from [Raylib official website](https://www.raylib.com/)
-   - Follow installation instructions for your platform
-
 ## File Structure
 
 ```
@@ -83,3 +67,19 @@ Use space key to Laser the alien and Press Enter to Restart
 ├── main.exe                    # Compiled executable for main
 └── mainmenu.exe                # Compiled executable for main menu
 ```
+
+## Requirements
+
+- C++ compiler
+- Raylib library
+- CMake (for building)
+- Windows 10/11
+
+## Installation
+
+1. Clone the repository:
+```git clone https://github.com/MarcusMQF/SpaceShip-Game-with-Raylib.git```
+
+2. Install Raylib library:
+   - Download from [Raylib official website](https://www.raylib.com/)
+   - Follow installation instructions for your platform
