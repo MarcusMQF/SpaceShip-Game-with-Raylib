@@ -2,6 +2,14 @@
 
 A retro-style 2D space shooter game created with Raylib and C++. Defend Earth against waves of alien invaders in this classic arcade-inspired game.
 
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [File Structure](#file-structure)
+- [Requirements](#requirements)
+- [Installation](#installation)
+
 ## Demo
 
 Use space key to Laser the alien and Press Enter to Restart
